@@ -7,6 +7,29 @@ use Illuminate\View\View;
 
 class AppLayout extends Component
 {
+    public array $navigation = [
+        [
+            'name' => 'Dashboard',
+            'route' => 'dashboard',
+            'icon' => 'heroicon-o-home',
+        ],
+        [
+            'name' => 'Teams',
+            'route' => 'login',
+            'icon' => 'heroicon-o-users',
+        ],
+        [
+            'name' => 'Projects',
+            'route' => 'register',
+            'icon' => 'heroicon-o-home',
+        ],
+        [
+            'name' => 'Project Tasks',
+            'route' => 'register',
+            'icon' => 'heroicon-o-home',
+        ],
+    ];
+
     /**
      * Get the view / contents that represents the component.
      */
