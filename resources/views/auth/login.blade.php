@@ -9,7 +9,7 @@
         <form method="POST" action="{{ route('login') }}" class="w-full px-6 py-8 md:px-8 lg:w-1/2">
             @csrf
             <div class="flex justify-center mx-auto">
-                <img class="w-auto h-7 sm:h-8" src="https://merakiui.com/images/logo.svg" alt="">
+                <x-application-logo class="block h-9 w-auto text-gray-800 dark:text-gray-200" />
             </div>
 
             <p class="mt-3 text-xl text-center text-gray-600 dark:text-gray-200">
