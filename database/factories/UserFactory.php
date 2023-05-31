@@ -17,9 +17,19 @@ class UserFactory extends Factory
      */
     public function definition(): array
     {
+        $national_id = fake()->unique()->randomFloat(0, 111111111, 999999999);
         return [
-            'name' => fake()->name(),
+            'national_id' => $national_id,
+            'username' => $national_id,
+            'first_name' => fake()->name(),
+            'middle_name' => fake()->name(),
+            'last_name' => fake()->lastName(),
             'email' => fake()->unique()->safeEmail(),
+            'gender' => fake()->randomElement(['male,female']),
+            'phone' => fake()->phoneNumber(),
+            'bod' => fake()->date(),
+            'avatar' => fake()->image(),
+            'is_employee' => fake()->boolean(),
             'email_verified_at' => now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'remember_token' => Str::random(10),
