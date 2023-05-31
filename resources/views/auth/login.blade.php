@@ -1,47 +1,95 @@
 <x-guest-layout>
     <!-- Session Status -->
-    <x-auth-session-status class="mb-4" :status="session('status')" />
+    <x-auth-session-status class="mb-4" :status="session('status')"/>
 
-    <form method="POST" action="{{ route('login') }}">
-        @csrf
+    <div
+        class="flex w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800 lg:max-w-4xl">
+        <div class="hidden bg-cover lg:block lg:w-1/2"
+             style="background-image: url('https://images.unsplash.com/photo-1606660265514-358ebbadc80d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1575&q=80');"></div>
+        <form method="POST" action="{{ route('login') }}" class="w-full px-6 py-8 md:px-8 lg:w-1/2">
+            @csrf
+            <div class="flex justify-center mx-auto">
+                <img class="w-auto h-7 sm:h-8" src="https://merakiui.com/images/logo.svg" alt="">
+            </div>
 
-        <!-- Email Address -->
-        <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
-        </div>
+            <p class="mt-3 text-xl text-center text-gray-600 dark:text-gray-200">
+                {{__('Title')}}
+            </p>
 
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
 
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="current-password" />
+            <div class="flex items-center justify-between mt-4">
+                <span class="w-1/5 border-b dark:border-gray-600 lg:w-1/4"></span>
 
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
-
-        <!-- Remember Me -->
-        <div class="block mt-4">
-            <label for="remember_me" class="inline-flex items-center">
-                <input id="remember_me" type="checkbox" class="rounded dark:bg-gray-900 border-gray-300 dark:border-gray-700 text-indigo-600 shadow-sm focus:ring-indigo-500 dark:focus:ring-indigo-600 dark:focus:ring-offset-gray-800" name="remember">
-                <span class="ml-2 text-sm text-gray-600 dark:text-gray-400">{{ __('Remember me') }}</span>
-            </label>
-        </div>
-
-        <div class="flex items-center justify-end mt-4">
-            @if (Route::has('password.request'))
-                <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('password.request') }}">
-                    {{ __('Forgot your password?') }}
+                <a href="#" class="text-xs text-center text-gray-500 uppercase dark:text-gray-400 hover:underline">
+                    {{__('Welcome back!')}}
                 </a>
-            @endif
 
-            <x-primary-button class="ml-3">
-                {{ __('Log in') }}
-            </x-primary-button>
-        </div>
-    </form>
+                <span class="w-1/5 border-b dark:border-gray-400 lg:w-1/4"></span>
+            </div>
+
+            <div class="mt-4">
+                <label class="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200"
+                       for="input_type">
+                    {{__('Email/Username')}}
+                </label>
+
+                <input
+                    id="input_type"
+                    class="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-300"
+                    type="text"
+                    name="input_type"
+                    value="{{ old('input_type') }}"
+                    required
+                    autofocus
+                    autocomplete="input_type"
+                />
+            </div>
+
+            <div class="mt-4">
+                <div class="flex justify-between">
+                    <label class="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200"
+                           for="password">{{__('Password')}}</label>
+                    @if (Route::has('password.request'))
+                        <a href="#"
+                           class="text-xs text-gray-500 dark:text-gray-300 hover:underline">{{__('Forget Password?')}}</a>
+                    @endif
+                </div>
+
+                <input id="password"
+                       class="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-300"
+                       type="password"
+                       name="password"
+                       required autocomplete="current-password"
+                />
+            </div>
+
+            <div class="mt-6">
+                <button
+                    class="w-full px-6 py-3 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-gray-800 dark:bg-gray-200 dark:text-gray-800 dark:hover:bg-white rounded-lg hover:bg-gray-700 focus:outline-none focus:ring focus:ring-gray-300 focus:ring-opacity-50">
+                    {{ __('Login') }}
+                </button>
+            </div>
+
+            <div class="flex items-center justify-between mt-4">
+                <span class="w-1/5 border-b dark:border-gray-600 md:w-1/4"></span>
+
+                <a href="{{ route('register') }}"
+                   class="text-xs text-gray-500 uppercase dark:text-gray-400 hover:underline">{{__('or sign up')}}</a>
+
+                <span class="w-1/5 border-b dark:border-gray-600 md:w-1/4"></span>
+            </div>
+
+            @if(app()->getLocale() === 'ar')
+                <div class="flex justify-end">
+                    <a href="{{ route('localization', ['locale'=>'en']) }}"
+                       class="text-xs text-gray-500 uppercase dark:text-gray-400 hover:underline">English</a>
+                </div>
+            @else
+                <div class="flex justify-end">
+                    <a href="{{ route('localization', ['locale'=>'ar']) }}"
+                       class="text-xs text-gray-500 uppercase dark:text-gray-400 hover:underline">العربية</a>
+                </div>
+            @endif
+        </form>
+    </div>
 </x-guest-layout>
