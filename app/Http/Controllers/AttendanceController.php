@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreAttendanceRequest;
-use App\Http\Requests\UpdateAttendanceRequest;
+use App\Http\Requests\Store\StoreAttendanceRequest;
+use App\Http\Requests\Update\UpdateAttendanceRequest;
 use App\Models\Attendance;
 
 class AttendanceController extends Controller

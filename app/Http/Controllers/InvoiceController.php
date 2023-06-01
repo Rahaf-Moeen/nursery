@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreInvoiceRequest;
-use App\Http\Requests\UpdateInvoiceRequest;
+use App\Http\Requests\Store\StoreInvoiceRequest;
+use App\Http\Requests\Update\UpdateInvoiceRequest;
 use App\Models\Invoice;
 
 class InvoiceController extends Controller

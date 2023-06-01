@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreConfigRequest;
-use App\Http\Requests\UpdateConfigRequest;
+use App\Http\Requests\Store\StoreConfigRequest;
+use App\Http\Requests\Update\UpdateConfigRequest;
 use App\Models\Config;
 
 class ConfigController extends Controller

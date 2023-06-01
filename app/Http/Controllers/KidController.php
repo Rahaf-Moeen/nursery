@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreKidRequest;
-use App\Http\Requests\UpdateKidRequest;
+use App\Http\Requests\Store\StoreKidRequest;
+use App\Http\Requests\Update\UpdateKidRequest;
 use App\Models\Kid;
 
 class KidController extends Controller

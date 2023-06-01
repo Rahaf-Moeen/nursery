@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreApplicationRequest;
-use App\Http\Requests\UpdateApplicationRequest;
+use App\Http\Requests\Store\StoreApplicationRequest;
+use App\Http\Requests\Update\UpdateApplicationRequest;
 use App\Models\Application;
 
 class ApplicationController extends Controller

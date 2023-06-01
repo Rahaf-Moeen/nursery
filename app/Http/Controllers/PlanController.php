@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StorePlanRequest;
-use App\Http\Requests\UpdatePlanRequest;
+use App\Http\Requests\Store\StorePlanRequest;
+use App\Http\Requests\Update\UpdatePlanRequest;
 use App\Models\Plan;
 
 class PlanController extends Controller
