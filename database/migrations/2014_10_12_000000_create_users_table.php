@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('middle_name');
             $table->string('last_name');
             $table->string('gender');
-            $table->string('phone');
+            $table->string('phone_number');
             $table->date('bod');
             $table->string('avatar');
             $table->string('password');
