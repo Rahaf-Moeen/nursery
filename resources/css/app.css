@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
 
 @tailwind base;
+@layer base {
+    :where([dir="rtl"]) select {
+        background-position: left theme('spacing.2') center;
+        padding-left: theme('spacing.10');
+        padding-right: theme('spacing.3');
+    }
+}
 @tailwind components;
 @tailwind utilities;
