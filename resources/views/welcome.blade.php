@@ -77,10 +77,14 @@
 
                         <div class="hidden sm:flex sm:items-center sm:ml-6">
                             <div class="flex items-center ltr:mr-2 ltr:ml-2 rtl:ml-2">
-                                <button
-                                    class="flex items-center px-4 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-600 rounded-lg hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80">
+                                <a href="{{ route('login') }}"
+                                    class="flex items-center px-4 py-2 font-medium tracking-wide text-gray-200 capitalize transition-colors duration-300 transform bg-gray-700 rounded-lg hover:bg-gray-600 dark:hover:text-white focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80">
+                                    <span class="mx-1">{{__("Login")}}</span>
+                                </a>
+                                <a href="{{ route('register') }}"
+                                    class="flex items-center ms-1 px-4 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-600 rounded-lg hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80">
                                     <span class="mx-1">{{__("Join Us")}}</span>
-                                </button>
+                                </a>
                             </div>
 
                         </div>
@@ -104,51 +108,30 @@
 
                 <!-- Responsive Navigation Menu -->
                 <div x-bind:class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
-                    <div class="pt-2 pb-3 space-y-1">
-                        <x-responsive-nav-link href="#dsa"
-                        >
-                            {{ __('Con') }}
-                        </x-responsive-nav-link>
-                    </div>
-
                     <!-- Responsive Settings Options -->
                     <div class="pt-4 pb-1 border-t border-gray-200 dark:border-gray-600">
-                        <div class="flex flex-row justify-between px-4">
-                            <div class="flex flex-col">
-                                <button
-                                    class="flex items-center px-4 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-600 rounded-lg hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80">
-                                    <svg class="w-5 h-5 mx-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
-                                         fill="currentColor">
-                                        <path fill-rule="evenodd"
-                                              d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z"
-                                              clip-rule="evenodd"/>
-                                    </svg>
-
-                                    <span class="mx-1">Refresh</span>
-                                </button>
-                            </div>
-                            <div class="flex items-center">
-                                <x-locale-switcher/>
-                            </div>
-                            <div class="flex items-center">
-                                <x-theme-switcher/>
-                            </div>
-                        </div>
-
                         <div class="mt-3 space-y-1">
-                            <x-responsive-nav-link :href="route('profile.edit')">
-                                {{ __('Profile') }}
+                            <x-responsive-nav-link href="#home">
+                                {{__('Home')}}
                             </x-responsive-nav-link>
-                            <!-- Authentication -->
-                            <form method="POST" action="{{ route('logout') }}">
-                                @csrf
-
-                                <x-responsive-nav-link :href="route('logout')"
-                                                       onclick="event.preventDefault();
-                                        this.closest('form').submit();">
-                                    {{ __('Log Out') }}
-                                </x-responsive-nav-link>
-                            </form>
+                            <x-responsive-nav-link href="#home">
+                                {{__('About Us')}}
+                            </x-responsive-nav-link>
+                            <x-responsive-nav-link href="#pricing">
+                                {{ __('Pricing') }}
+                            </x-responsive-nav-link>
+                            <x-responsive-nav-link href="#feedback">
+                                {{ __('Feedback') }}
+                            </x-responsive-nav-link>
+                            <x-responsive-nav-link href="#contact_us">
+                                {{ __('Contact Us') }}
+                            </x-responsive-nav-link>
+                            <x-responsive-nav-link href="{{ route('register') }}">
+                                {{ __('Join Us') }}
+                            </x-responsive-nav-link>
+                            <x-responsive-nav-link href="{{ route('login') }}">
+                                {{ __('Login') }}
+                            </x-responsive-nav-link>
                         </div>
 
                     </div>
