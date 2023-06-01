@@ -22,15 +22,6 @@ class Alert extends Component
         $this->type = $type;
     }
 
-    public function backgroundCSS(): string
-    {
-        return [
-            'error' => 'bg-red-500',
-            'success' => 'bg-emerald-500',
-            'warning' => 'bg-yellow-400'
-        ][$this->type];
-    }
-
     public function textCss(): string
     {
         return [
