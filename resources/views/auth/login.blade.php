@@ -8,9 +8,6 @@
              style="background-image: url('https://images.unsplash.com/photo-1606660265514-358ebbadc80d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1575&q=80');"></div>
         <form method="POST" action="{{ route('login') }}" class="w-full px-6 py-8 md:px-8 lg:w-1/2">
             @csrf
-
-
-
             <div class="flex items-center justify-between mt-4">
                 <span class="w-1/5 border-b dark:border-gray-600 lg:w-1/4"></span>
 
@@ -53,7 +50,8 @@
                        class="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-300"
                        type="password"
                        name="password"
-                       required autocomplete="current-password"
+                       required
+                       autocomplete="current-password"
                 />
             </div>
 
@@ -68,7 +66,9 @@
                 <span class="w-1/5 border-b dark:border-gray-600 md:w-1/4"></span>
 
                 <a href="{{ route('register') }}"
-                   class="text-xs text-gray-500 uppercase dark:text-gray-400 hover:underline">{{__('or sign up')}}</a>
+                   class="text-xs text-gray-500 uppercase dark:text-gray-400 hover:underline">
+                    {{__('New Here? Register Now')}}
+                </a>
 
                 <span class="w-1/5 border-b dark:border-gray-600 md:w-1/4"></span>
             </div>
