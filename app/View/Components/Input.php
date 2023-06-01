@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class FieldInput extends Component
+class Input extends Component
 {
     public string $invalid_message;
     public string $id;
@@ -64,6 +64,6 @@ class FieldInput extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.field-input');
+        return view('components.input');
     }
 }

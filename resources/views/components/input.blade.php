@@ -13,7 +13,7 @@
     {{$disabled?'disabled':''}}
     autofocus
     autocomplete="{{ $autocomplete }}"
-    value="{{$value}}"
+    value="{{ old($name) }}"
     oninvalid="this.setCustomValidity('{{ $invalid_message }}')"
     oninput="validate(this)"
 />
