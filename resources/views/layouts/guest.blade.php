@@ -22,15 +22,15 @@
     $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))" x-cloak>
 <div x-bind:class="{'dark' : darkMode === true}" class="min-h-screen bg-gray-100">
     <div class="min-h-screen flex flex-col pt-6 sm:pt-0 bg-white dark:bg-gray-900">
-        <a href="{{ route('welcome') }}" class="flex flex-col items-center mt-3 lg:mt-16">
-            <div class="flex justify-center mx-auto">
+        <div  class="flex flex-col items-center mt-3 lg:mt-16">
+            <a href="{{ route('welcome') }}">
                 <x-application-logo class="block h-9 w-auto text-gray-800 dark:text-gray-200" />
-            </div>
+            </a>
 
-            <p class="mt-3 text-xl text-center text-gray-600 dark:text-gray-200">
+            <a href="{{ route('welcome') }}" class="mt-3 text-xl text-center text-gray-600 dark:text-gray-200">
                 {{__('Al-Ghad Al-Mashreq Nursery')}}
-            </p>
-        </a>
+            </a>
+        </div>
         <div class="ml-2 flex justify-center mt-3">
             <x-theme-switcher/>
         </div>
