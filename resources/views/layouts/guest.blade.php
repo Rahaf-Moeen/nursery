@@ -21,15 +21,27 @@
     darkMode = JSON.parse(localStorage.getItem('darkMode'));
     $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))" x-cloak>
 <div x-bind:class="{'dark' : darkMode === true}" class="min-h-screen bg-gray-100">
-    <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-white dark:bg-gray-900">
-        <div class="ml-2">
+    <div class="min-h-screen flex flex-col pt-6 sm:pt-0 bg-white dark:bg-gray-900">
+        <a href="{{ route('welcome') }}" class="flex flex-col items-center mt-3 lg:mt-16">
+            <div class="flex justify-center mx-auto">
+                <x-application-logo class="block h-9 w-auto text-gray-800 dark:text-gray-200" />
+            </div>
+
+            <p class="mt-3 text-xl text-center text-gray-600 dark:text-gray-200">
+                {{__('Al-Ghad Al-Mashreq Nursery')}}
+            </p>
+        </a>
+        <div class="ml-2 flex justify-center mt-3">
             <x-theme-switcher/>
         </div>
-        <div class="w-full mt-6 px-6 py-4 bg-white dark:bg-gray-900 overflow-hidden ">
+        <div class="w-full mt-3 px-6 py-4 bg-white dark:bg-gray-900 overflow-hidden ">
             @if($errors->any())
                 <x-alert :title="__('Error')" :message="$errors->first()" type="error"/>
             @endif
             {{ $slot }}
+        </div>
+        <div class="flex justify-center mt-0 lg:mt-5">
+            <x-locale-switcher/>
         </div>
     </div>
 </div>
