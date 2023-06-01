@@ -15,167 +15,38 @@
 
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-3 mt-3">
                 <div class="mt-2 lg:mt-0 ">
-                    <label class="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200"
-                           for="national_id">
-                        {{__('National ID')}}
-                    </label>
-
-                    <input
-                        id="national_id"
-                        class="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-300"
-                        type="text"
-                        name="national_id"
-                        value="{{ old('national_id') }}"
-                        placeholder="{{__('National ID')}}"
-                        required
-                        autofocus
-                        autocomplete="national_id"
-                    />
+                    <x-input label="National ID" name="national_id"/>
                 </div>
-                <div class="mt-2 lg:mt-0 col-span-1 lg:col-span-2">
-                    <label class="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200"
-                           for="name" for="first_name" for="middle_name" for="last_name">
-                        {{__('Name')}}
-                    </label>
-
+                <div class="col-span-1 lg:col-span-2">
                     <div class="grid grid-cols-1 lg:grid-cols-3 gap-1">
-                        <input
-                            id="first_name"
-                            class="block px-4 py-2 text-gray-700 bg-white border rounded-lg dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-300"
-                            type="text"
-                            name="first_name"
-                            placeholder="{{__('First Name')}}"
-                            value="{{ old('first_name') }}"
-                            required
-                            autofocus
-                            autocomplete="first_name"
-                        />
-                        <input
-                            id="middle_name"
-                            class="block px-4 py-2 text-gray-700 bg-white border rounded-lg dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-300"
-                            type="text"
-                            name="middle_name"
-                            value="{{ old('middle_name') }}"
-                            placeholder="{{__('Middle Name')}}"
-                            required
-                            autofocus
-                            autocomplete="middle_name"
-                        />
-                        <input
-                            id="last_name"
-                            class="block px-4 py-2 text-gray-700 bg-white border rounded-lg dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-300"
-                            type="text"
-                            name="last_name"
-                            value="{{ old('last_name') }}"
-                            placeholder="{{__('Last Name')}}"
-                            required
-                            autofocus
-                            autocomplete="last_name"
-                        />
+                        <div class="mt-2 lg:mt-0">
+                            <x-input label="First Name" name="first_name"/>
+                        </div>
+                        <div class="mt-2 lg:mt-0">
+                            <x-input label="Middle Name" name="middle_name"/>
+                        </div>
+                        <div class="mt-2 lg:mt-0">
+                            <x-input label="Last Name" name="last_name"/>
+                        </div>
                     </div>
                 </div>
                 <div class="mt-2 lg:mt-0">
-                    <label class="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200"
-                           for="email">
-                        {{__('Email')}}
-                    </label>
-
-                    <input
-                        id="email"
-                        class="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-300"
-                        type="email"
-                        name="email"
-                        value="{{ old('email') }}"
-                        placeholder="{{__('Email')}}"
-                        required
-                        autofocus
-                        autocomplete="email"
-                    />
+                    <x-input label="Email" name="email" type="email"/>
                 </div>
                 <div class="mt-2 lg:mt-0">
-                    <label class="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200"
-                           for="phone">
-                        {{__('Phone')}}
-                    </label>
-
-                    <input
-                        id="phone"
-                        class="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-300"
-                        type="text"
-                        name="phone"
-                        value="{{ old('phone') }}"
-                        placeholder="{{__('Phone')}}"
-                        required
-                        autofocus
-                        autocomplete="phone"
-                    />
+                    <x-input label="Phone Number" name="phone_number"/>
                 </div>
                 <div class="mt-2 lg:mt-0">
-                    <label class="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200"
-                           for="date_of_birth">
-                        {{__('Date of Birth')}}
-                    </label>
-
-                    <input
-                        id="date_of_birth"
-                        class="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-300"
-                        type="date"
-                        name="date_of_birth"
-                        value="{{ old('date_of_birth') }}"
-                        placeholder="{{__('Date of Birth')}}"
-                        required
-                        autofocus
-                        autocomplete="date_of_birth"
-                    />
+                    <x-input label="Date of Birth" name="dob" type="date"/>
                 </div>
                 <div class="mt-2 lg:mt-0">
-                    <label class="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200"
-                           for="gender">
-                        {{__('Gender')}}
-                    </label>
-
-                    <select
-                        id="gender"
-                        name="gender"
-                        class="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-300"
-                        required
-                    >
-                        <option value="" selected>{{__('Select Gender')}}</option>
-                        <option value="male">{{__('male')}}</option>
-                        <option value="female">{{__('female')}}</option>
-                    </select>
+                    <x-select label="Gender" name="gender" options="male,female" />
                 </div>
                 <div class="mt-2 lg:mt-0">
-                    <label class="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200"
-                           for="password">
-                        {{__('Password')}}
-                    </label>
-
-                    <input
-                        id="password"
-                        class="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-300"
-                        type="password"
-                        name="password"
-                        placeholder="{{__('Password')}}"
-                        required
-                        autocomplete="new-password"
-                    />
+                    <x-input type="password" label="Password" name="password"/>
                 </div>
                 <div class="mt-2 lg:mt-0">
-                    <label class="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200"
-                           for="password_confirmation">
-                        {{__('Confirm Password')}}
-                    </label>
-
-                    <input
-                        id="password_confirmation"
-                        class="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-300"
-                        type="password"
-                        name="password_confirmation"
-                        placeholder="{{__('Confirm Password')}}"
-                        required
-                        autocomplete="new-password"
-                    />
+                    <x-input type="password" label="Confirm Password" name="password_confirmation" min="8"/>
                 </div>
             </div>
 
