@@ -34,7 +34,7 @@
         <div class="ml-2 flex justify-center mt-3">
             <x-theme-switcher/>
         </div>
-        <div class="w-full mt-3 px-6 py-4 bg-white dark:bg-gray-900 overflow-hidden ">
+        <div class="w-full mt-3 px-6 py-4 dark:bg-gray-900 overflow-hidden ">
             @if($errors->any())
                 <x-alert :title="__('Error')" :message="$errors->first()" type="error"/>
             @endif
