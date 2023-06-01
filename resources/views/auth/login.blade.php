@@ -8,13 +8,7 @@
              style="background-image: url('https://images.unsplash.com/photo-1606660265514-358ebbadc80d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1575&q=80');"></div>
         <form method="POST" action="{{ route('login') }}" class="w-full px-6 py-8 md:px-8 lg:w-1/2">
             @csrf
-            <div class="flex justify-center mx-auto">
-                <x-application-logo class="block h-9 w-auto text-gray-800 dark:text-gray-200" />
-            </div>
 
-            <p class="mt-3 text-xl text-center text-gray-600 dark:text-gray-200">
-                {{__('Title')}}
-            </p>
 
 
             <div class="flex items-center justify-between mt-4">
@@ -78,8 +72,6 @@
 
                 <span class="w-1/5 border-b dark:border-gray-600 md:w-1/4"></span>
             </div>
-
-            <x-locale-switcher/>
         </form>
     </div>
 </x-guest-layout>
