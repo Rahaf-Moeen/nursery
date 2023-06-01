@@ -21,8 +21,8 @@ return new class extends Migration
             $table->string('last_name');
             $table->string('gender');
             $table->string('phone_number');
-            $table->date('bod');
-            $table->string('avatar');
+            $table->date('dob');
+            $table->string('avatar')->nullable();
             $table->string('password');
             $table->boolean('is_employee')->default(false);
             $table->timestamp('email_verified_at')->nullable();
