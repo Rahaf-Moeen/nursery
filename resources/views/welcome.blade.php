@@ -25,7 +25,7 @@
     <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
         <div class="sticky top-0">
             <div
-                class="flex justify-around bg-gray-100 dark:bg-gray-700 p-3 border-b-2 border-gray-100 dark:border-gray-700">
+                class="flex justify-around bg-[#cc0072] dark:bg-gray-700 p-3 border-b-2 border-gray-100 dark:border-gray-700">
                 <div class="flex items-center">
                     <x-theme-switcher/>
                 </div>
@@ -77,14 +77,10 @@
 
                         <div class="hidden sm:flex sm:items-center sm:ml-6">
                             <div class="flex items-center ltr:mr-2 ltr:ml-2 rtl:ml-2">
-                                <a href="{{ route('login') }}"
-                                    class="flex items-center px-4 py-2 font-medium tracking-wide text-gray-200 capitalize transition-colors duration-300 transform bg-gray-700 rounded-lg hover:bg-gray-600 dark:hover:text-white focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80">
-                                    <span class="mx-1">{{__("Login")}}</span>
-                                </a>
-                                <a href="{{ route('register') }}"
-                                    class="flex items-center ms-1 px-4 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-600 rounded-lg hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80">
+                                <button
+                                    class="flex items-center px-4 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-600 rounded-lg hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80">
                                     <span class="mx-1">{{__("Join Us")}}</span>
-                                </a>
+                                </button>
                             </div>
 
                         </div>
@@ -108,30 +104,48 @@
 
                 <!-- Responsive Navigation Menu -->
                 <div x-bind:class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
+                    <div class="pt-2 pb-3 space-y-1">
+                        
+                    </div>
+
                     <!-- Responsive Settings Options -->
                     <div class="pt-4 pb-1 border-t border-gray-200 dark:border-gray-600">
+                        <div class="flex flex-row justify-between px-4">
+                            <div class="flex flex-col">
+                                <button
+                                    class="flex items-center px-4 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-600 rounded-lg hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80">
+                                    <svg class="w-5 h-5 mx-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                         fill="currentColor">
+                                        <path fill-rule="evenodd"
+                                              d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z"
+                                              clip-rule="evenodd"/>
+                                    </svg>
+
+                                    <span class="mx-1">Refresh</span>
+                                </button>
+                            </div>
+                            <div class="flex items-center">
+                                <x-locale-switcher/>
+                            </div>
+                            <div class="flex items-center">
+                                <x-theme-switcher/>
+                            </div>
+                        </div>
+
                         <div class="mt-3 space-y-1">
-                            <x-responsive-nav-link href="#home">
-                                {{__('Home')}}
+                            <x-responsive-nav-link :href="route('profile.edit')">
+                                {{ __('Profile') }}
                             </x-responsive-nav-link>
-                            <x-responsive-nav-link href="#home">
-                                {{__('About Us')}}
-                            </x-responsive-nav-link>
-                            <x-responsive-nav-link href="#pricing">
-                                {{ __('Pricing') }}
-                            </x-responsive-nav-link>
-                            <x-responsive-nav-link href="#feedback">
-                                {{ __('Feedback') }}
-                            </x-responsive-nav-link>
-                            <x-responsive-nav-link href="#contact_us">
-                                {{ __('Contact Us') }}
-                            </x-responsive-nav-link>
-                            <x-responsive-nav-link href="{{ route('register') }}">
-                                {{ __('Join Us') }}
-                            </x-responsive-nav-link>
-                            <x-responsive-nav-link href="{{ route('login') }}">
-                                {{ __('Login') }}
-                            </x-responsive-nav-link>
+                            <!-- Authentication -->
+                            <form method="POST" action="{{ route('logout') }}">
+                                @csrf
+
+                                <x-responsive-nav-link :href="route('logout')"
+                                                       onclick="event.preventDefault();
+                                        this.closest('form').submit();">
+                                    {{ __('Log Out') }}
+                                </x-responsive-nav-link>
+                            </form>
                         </div>
 
                     </div>
@@ -144,76 +158,22 @@
                 <div class="w-full lg:w-1/2">
                     <div class="lg:max-w-lg">
                         <h1 class="text-3xl font-semibold tracking-wide text-gray-800 dark:text-white lg:text-4xl">
-                            Find your premium new glasses exported from US</h1>
-                        <p class="mt-4 text-gray-600 dark:text-gray-300">We work with the best remunated glasses
-                            dealers in US to find your new glasses.</p>
-                        <div class="grid gap-6 mt-8 sm:grid-cols-2">
-                            <div class="flex items-center text-gray-800 -px-3 dark:text-gray-200">
-                                <svg class="w-5 h-5 mx-3" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                     viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                          d="M5 13l4 4L19 7"/>
-                                </svg>
+                        Welcome to the Al-Ghad Al-Mashreq Nursery website</h1>
+                        <p class="mt-4 text-gray-600 dark:text-gray-300">A social educational learning environment that combines originality and modernity.</p>
 
-                                <span class="mx-3">Premium selection</span>
-                            </div>
+                        <p class="mt-4 text-gray-600 dark:text-gray-300">A purposeful social educational institution that seeks to provide meaningful educational and care services for children from the age of 45 days to three years.</p>
 
-                            <div class="flex items-center text-gray-800 -px-3 dark:text-gray-200">
-                                <svg class="w-5 h-5 mx-3" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                     viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                          d="M5 13l4 4L19 7"/>
-                                </svg>
+                        
 
-                                <span class="mx-3">Insurance</span>
-                            </div>
 
-                            <div class="flex items-center text-gray-800 -px-3 dark:text-gray-200">
-                                <svg class="w-5 h-5 mx-3" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                     viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                          d="M5 13l4 4L19 7"/>
-                                </svg>
 
-                                <span class="mx-3">All legal documents</span>
-                            </div>
-
-                            <div class="flex items-center text-gray-800 -px-3 dark:text-gray-200">
-                                <svg class="w-5 h-5 mx-3" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                     viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                          d="M5 13l4 4L19 7"/>
-                                </svg>
-
-                                <span class="mx-3">From US glasses dealers</span>
-                            </div>
-
-                            <div class="flex items-center text-gray-800 -px-3 dark:text-gray-200">
-                                <svg class="w-5 h-5 mx-3" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                     viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                          d="M5 13l4 4L19 7"/>
-                                </svg>
-
-                                <span class="mx-3">Payment Security</span>
-                            </div>
-
-                            <div class="flex items-center text-gray-800 -px-3 dark:text-gray-200">
-                                <svg class="w-5 h-5 mx-3" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                     viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                          d="M5 13l4 4L19 7"/>
-                                </svg>
-
-                                <span class="mx-3">Fast shipping (+ Express)</span>
-                            </div>
-                        </div>
+                        
                     </div>
                 </div>
 
                 <div class="flex items-center justify-center w-full h-96 lg:w-1/2">
                     <img class="object-cover w-full h-full max-w-2xl rounded-md"
-                         src="https://images.unsplash.com/photo-1555181126-cf46a03827c0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
+                         src="https://scontent.fgza2-3.fna.fbcdn.net/v/t39.30808-6/347379408_505726871679999_4352578916335791130_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=uJVo-BhN2bgAX_wXXYv&_nc_ht=scontent.fgza2-3.fna&oh=00_AfCDS2k3Jf-7MZcd5wGcoupHI7fIHgLsGJXfiIRSud056Q&oe=6485373F "
                          alt="glasses photo">
                 </div>
             </div>
@@ -226,28 +186,36 @@
                         class="flex flex-col w-full max-w-sm p-8 space-y-8 text-center bg-white border-2 border-gray-200 rounded-lg lg:mx-4 dark:bg-gray-900 dark:border-gray-700">
                         <div class="flex-shrink-0">
                             <h2 class="inline-flex items-center justify-center px-2 font-semibold tracking-tight text-blue-400 uppercase rounded-lg bg-gray-50 dark:bg-gray-700">
-                                Casual
+                            Hourly child fee system
                             </h2>
                         </div>
 
                         <div class="flex-shrink-0">
                 <span class="pt-2 text-3xl font-bold text-gray-800 uppercase dark:text-gray-100">
-                    Free
+                    4 ₪
                 </span>
                         </div>
 
                         <ul class="flex-1 space-y-4">
+                        <li class="text-gray-500 dark:text-gray-400">
+                            hour of the nursery :
+                            </li>
                             <li class="text-gray-500 dark:text-gray-400">
-                                Up to 5 projects
+                            5 ₪
+                            </li>
+                            <li class="text-gray-500 dark:text-gray-400">
+                                 
+                                From the age of 45 days 
                             </li>
 
                             <li class="text-gray-500 dark:text-gray-400">
-                                Up to 10 collaborators
+                            to the age of three years
                             </li>
 
                             <li class="text-gray-500 dark:text-gray-400">
-                                2Gb of storage
+                            The delay after the third 
                             </li>
+                           
                         </ul>
 
                         <button
@@ -260,36 +228,43 @@
                         class="flex flex-col w-full max-w-sm p-8 space-y-8 text-center bg-white border-2 border-gray-200 rounded-lg lg:mx-4 dark:bg-gray-900 dark:border-gray-700">
                         <div class="flex-shrink-0">
                             <h2 class="inline-flex items-center justify-center px-2 font-semibold tracking-tight text-blue-400 uppercase rounded-lg bg-gray-50 dark:bg-gray-700">
-                                Professional
+                            Child fee system per day
                             </h2>
                         </div>
 
                         <div class="flex-shrink-0">
                 <span class="pt-2 text-3xl font-bold text-gray-800 uppercase dark:text-gray-100">
-                    $24.90
+                    10 ₪
                 </span>
 
                             <span class="text-gray-500 dark:text-gray-400">
-                    /month
+                    /day
                 </span>
                         </div>
 
                         <ul class="flex-1 space-y-4">
                             <li class="text-gray-500 dark:text-gray-400">
-                                Up to 10 projects
+                            System 4 days a week for a month  : 
+                            </li>
+                            <li class="text-gray-500 dark:text-gray-400">
+                            100 ₪
                             </li>
 
                             <li class="text-gray-500 dark:text-gray-400">
-                                Up to 20 collaborators
+                            System 3 days a week for a month :
+                            </li>
+                            <li class="text-gray-500 dark:text-gray-400">
+                            80 ₪
                             </li>
 
                             <li class="text-gray-500 dark:text-gray-400">
-                                10Gb of storage
+                            System 2 days a week for a month : 
+                            </li>
+                            <li class="text-gray-500 dark:text-gray-400">
+                            50 ₪
                             </li>
 
-                            <li class="text-gray-500 dark:text-gray-400">
-                                Real-time collaborations
-                            </li>
+                           
                         </ul>
 
                         <button
@@ -302,13 +277,13 @@
                         class="flex flex-col w-full max-w-sm p-8 space-y-8 text-center bg-white border-2 border-gray-200 rounded-lg lg:mx-4 dark:bg-gray-900 dark:border-gray-700">
                         <div class="flex-shrink-0">
                             <h2 class="inline-flex items-center justify-center px-2 font-semibold tracking-tight text-blue-400 uppercase rounded-lg bg-gray-50 dark:bg-gray-700">
-                                Expert
+                            Child fee system per month
                             </h2>
                         </div>
 
                         <div class="flex-shrink-0">
                 <span class="pt-2 text-3xl font-bold text-gray-800 uppercase dark:text-gray-100">
-                    $49.90
+                150 ₪
                 </span>
 
                             <span class="text-gray-500 dark:text-gray-400">
@@ -318,24 +293,26 @@
 
                         <ul class="flex-1 space-y-4">
                             <li class="text-gray-500 dark:text-gray-400">
-                                Unlimited projects
+                            Monthly system for one child :
                             </li>
 
                             <li class="text-gray-500 dark:text-gray-400">
-                                Unlimited collaborators
+                            150 ₪
                             </li>
 
                             <li class="text-gray-500 dark:text-gray-400">
-                                Unlimited storage
+                            Monthly system for brothers number 2 :
                             </li>
 
                             <li class="text-gray-500 dark:text-gray-400">
-                                Real-time collaborations
+                            225 ₪                            </li>
+
+                            <li class="text-gray-500 dark:text-gray-400">
+                            Monthly system for brothers number 3 :
                             </li>
 
                             <li class="text-gray-500 dark:text-gray-400">
-                                24x7 Support
-                            </li>
+                            300 ₪                            </li>
                         </ul>
 
                         <button
@@ -353,19 +330,15 @@
                 </h1>
 
                 <p class="max-w-2xl mx-auto mt-6 text-center text-gray-500 dark:text-gray-300">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo incidunt ex placeat modi magni
-                    quia error
-                    alias, adipisci rem similique, at omnis eligendi optio eos harum.
+                {{__('Displaying the opinions or comments of previous customers about the nursery and its services.')}}
                 </p>
 
                 <section class="grid grid-cols-1 gap-8 mt-8 xl:mt-12 lg:grid-cols-2 xl:grid-cols-3">
                     <div class="p-8 border rounded-lg dark:border-gray-700">
                         <p class="leading-loose text-gray-500 dark:text-gray-400">
-                            “Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore quibusdam ducimus
-                            libero ad
-                            tempora doloribus expedita laborum saepe voluptas perferendis delectus assumenda rerum,
-                            culpa
-                            aperiam dolorum, obcaecati corrupti aspernatur a.”.
+                            “{{__('Great experience! Al-Ghad Al-Mashreq Nursery was a safe and nurturing place for my child. 
+                            The staff was friendly and professional, 
+                            and took care of the individual needs of the child.')}}”
                         </p>
 
                         <div class="flex items-center mt-8 -mx-2">
@@ -375,19 +348,16 @@
                                 alt="">
 
                             <div class="mx-2">
-                                <h1 class="font-semibold text-gray-800 dark:text-white">Robert</h1>
-                                <span class="text-sm text-gray-500">CTO, Robert Consultency</span>
+                                <h1 class="font-semibold text-gray-800 dark:text-white">Deema</h1>
+                                <span class="text-sm text-gray-500">Gaza,</span>
                             </div>
                         </div>
                     </div>
 
                     <div class="p-8 border rounded-lg dark:border-gray-700">
                         <p class="leading-loose text-gray-500 dark:text-gray-400">
-                            “Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore quibusdam ducimus
-                            libero ad
-                            tempora doloribus expedita laborum saepe voluptas perferendis delectus assumenda rerum,
-                            culpa
-                            aperiam dolorum, obcaecati corrupti aspernatur a.”.
+                            “{{__('I am very happy with the service of Al Ghad Al Mashreq Nursery. Their professional treatment and individual attention to my 
+                                child made me feel comfortable and confident. I highly recommend them!')}}”.
                         </p>
 
                         <div class="flex items-center mt-8 -mx-2">
@@ -397,19 +367,16 @@
                                 alt="">
 
                             <div class="mx-2">
-                                <h1 class="font-semibold text-gray-800 dark:text-white">Jeny Doe</h1>
-                                <span class="text-sm text-gray-500">CEO, Jeny Consultency</span>
+                                <h1 class="font-semibold text-gray-800 dark:text-white"> Noor </h1>
+                                <span class="text-sm text-gray-500">Gaza, </span>
                             </div>
                         </div>
                     </div>
 
                     <div class="p-8 border rounded-lg dark:border-gray-700">
                         <p class="leading-loose text-gray-500 dark:text-gray-400">
-                            “Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore quibusdam ducimus
-                            libero ad
-                            tempora doloribus expedita laborum saepe voluptas perferendis delectus assumenda rerum,
-                            culpa
-                            aperiam dolorum, obcaecati corrupti aspernatur a.”.
+                            “{{__('Al Ghad Al Mashreq Nursery is the best choice for my child. Take advantage of their educational programs
+                                 and fun activities. They gave him the care and love he deserves.')}}”.
                         </p>
 
                         <div class="flex items-center mt-8 -mx-2">
@@ -419,8 +386,8 @@
                                 alt="">
 
                             <div class="mx-2">
-                                <h1 class="font-semibold text-gray-800 dark:text-white">Ema Watson </h1>
-                                <span class="text-sm text-gray-500">Marketing Manager at Stech</span>
+                                <h1 class="font-semibold text-gray-800 dark:text-white"> Ali </h1>
+                                <span class="text-sm text-gray-500">Gaza, </span>
                             </div>
                         </div>
                     </div>
@@ -440,7 +407,7 @@
 
                             <h2 class="mt-4 text-base font-medium text-gray-800 dark:text-white">Email</h2>
                             <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Our friendly team is here to help.</p>
-                            <p class="mt-2 text-sm text-blue-500 dark:text-blue-400">hello@merakiui.com</p>
+                            <p class="mt-2 text-sm text-blue-500 dark:text-blue-400">elgadnursery@gmail.com</p>
                         </div>
 
                         <div>
@@ -453,7 +420,7 @@
 
                             <h2 class="mt-4 text-base font-medium text-gray-800 dark:text-white">Office</h2>
                             <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Come say hello at our office HQ.</p>
-                            <p class="mt-2 text-sm text-blue-500 dark:text-blue-400">100 Smith Street Collingwood VIC 3066 AU</p>
+                            <p class="mt-2 text-sm text-blue-500 dark:text-blue-400">Palestine, Gaza, Islamic University</p>
                         </div>
 
                         <div>
@@ -464,40 +431,119 @@
                     </span>
 
                             <h2 class="mt-4 text-base font-medium text-gray-800 dark:text-white">Phone</h2>
-                            <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Mon-Fri from 8am to 5pm.</p>
-                            <p class="mt-2 text-sm text-blue-500 dark:text-blue-400">+1 (555) 000-0000</p>
+                            <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">From Saturday to Wednesday from 8 am to 5 pm.</p>
+                            <p class="mt-2 text-sm text-blue-500 dark:text-blue-400">(00972) 592 070 188</p>
                         </div>
                     </div>
 
                     <div class="overflow-hidden rounded-lg lg:col-span-2 h-96 lg:h-auto">
-                        <iframe width="100%" height="100%" frameborder="0" title="map" marginheight="0" marginwidth="0" scrolling="no" src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;q=%C4%B0zmir+(My%20Business%20Name)&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed"></iframe>
+                        <iframe width="100%" height="100%" frameborder="0" title="map" marginheight="0" marginwidth="0" scrolling="no" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3401.3395086784362!2d34.44259232580313!3d31.514833974216454!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14fd7feace23d62b%3A0xe2c87f576e105888!2sIslamic%20University%20of%20Gaza!5e0!3m2!1sar!2s!4v1686166038991!5m2!1sar!2s"></iframe>
                     </div>
                 </div>
             </div>
         </section>
-        <footer class="bg-white dark:bg-gray-900">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+        
+                    <footer class="bg-white dark:bg-gray-900">
             <div class="container p-6 mx-auto">
                 <div class="lg:flex">
                     <div class="w-full -mx-6 lg:w-2/5">
                         <div class="px-6">
-                            <a href="#">
-                                <img class="w-auto h-7" src="https://merakiui.com/images/full-logo.svg" alt="">
-                            </a>
+                            
 
-                            <p class="max-w-sm mt-2 text-gray-500 dark:text-gray-400">Join 31,000+ other and never miss out on new tips, tutorials, and more.</p>
+                            <a href="https://scontent.fgza2-3.fna.fbcdn.net/v/t39.30808-6/268466578_648134999887724_8002045381818402433_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=gep96IiAXSgAX-X-J6B&_nc_oc=AQlwFH6VKHIabS6WzMOr5wLNNq1Wu5wgXAszbZSTF_NYmuXuuKNIBYXLSGSa3IdU0kM&_nc_ht=scontent.fgza2-3.fna&oh=00_AfBujR4c9ek8vHqXdyc4XnBmqvGtEvo9cZwAkuG89pau1g&oe=6486028D">
+    <img class="w-auto h-7 hover:scale-110" src="https://scontent.fgza2-3.fna.fbcdn.net/v/t39.30808-6/268466578_648134999887724_8002045381818402433_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=gep96IiAXSgAX-X-J6B&_nc_oc=AQlwFH6VKHIabS6WzMOr5wLNNq1Wu5wgXAszbZSTF_NYmuXuuKNIBYXLSGSa3IdU0kM&_nc_ht=scontent.fgza2-3.fna&oh=00_AfBujR4c9ek8vHqXdyc4XnBmqvGtEvo9cZwAkuG89pau1g&oe=6486028D" 
+    alt=""style="transform: scale(2.5); transition: transform 0.3s ease-in-out;">
+</a>
+
+
+<br>
+                            <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>{{__('Palestine ,Gaza, islamic university, Medina building ')}}</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>{{__('0592 070 188')}}</p>
+                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>{{__('elgadnursery@gmail.com')}}</p>
 
                             <div class="flex mt-6 -mx-2">
                                 <a href="#"
                                    class="mx-2 text-gray-600 transition-colors duration-300 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400"
                                    aria-label="Reddit">
-                                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path
                                             d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C21.9939 17.5203 17.5203 21.9939 12 22ZM6.807 10.543C6.20862 10.5433 5.67102 10.9088 5.45054 11.465C5.23006 12.0213 5.37133 12.6558 5.807 13.066C5.92217 13.1751 6.05463 13.2643 6.199 13.33C6.18644 13.4761 6.18644 13.6229 6.199 13.769C6.199 16.009 8.814 17.831 12.028 17.831C15.242 17.831 17.858 16.009 17.858 13.769C17.8696 13.6229 17.8696 13.4761 17.858 13.33C18.4649 13.0351 18.786 12.3585 18.6305 11.7019C18.475 11.0453 17.8847 10.5844 17.21 10.593H17.157C16.7988 10.6062 16.458 10.7512 16.2 11C15.0625 10.2265 13.7252 9.79927 12.35 9.77L13 6.65L15.138 7.1C15.1931 7.60706 15.621 7.99141 16.131 7.992C16.1674 7.99196 16.2038 7.98995 16.24 7.986C16.7702 7.93278 17.1655 7.47314 17.1389 6.94094C17.1122 6.40873 16.6729 5.991 16.14 5.991C16.1022 5.99191 16.0645 5.99491 16.027 6C15.71 6.03367 15.4281 6.21641 15.268 6.492L12.82 6C12.7983 5.99535 12.7762 5.993 12.754 5.993C12.6094 5.99472 12.4851 6.09583 12.454 6.237L11.706 9.71C10.3138 9.7297 8.95795 10.157 7.806 10.939C7.53601 10.6839 7.17843 10.5422 6.807 10.543ZM12.18 16.524C12.124 16.524 12.067 16.524 12.011 16.524C11.955 16.524 11.898 16.524 11.842 16.524C11.0121 16.5208 10.2054 16.2497 9.542 15.751C9.49626 15.6958 9.47445 15.6246 9.4814 15.5533C9.48834 15.482 9.52348 15.4163 9.579 15.371C9.62737 15.3318 9.68771 15.3102 9.75 15.31C9.81233 15.31 9.87275 15.3315 9.921 15.371C10.4816 15.7818 11.159 16.0022 11.854 16C11.9027 16 11.9513 16 12 16C12.059 16 12.119 16 12.178 16C12.864 16.0011 13.5329 15.7863 14.09 15.386C14.1427 15.3322 14.2147 15.302 14.29 15.302C14.3653 15.302 14.4373 15.3322 14.49 15.386C14.5985 15.4981 14.5962 15.6767 14.485 15.786V15.746C13.8213 16.2481 13.0123 16.5208 12.18 16.523V16.524ZM14.307 14.08H14.291L14.299 14.041C13.8591 14.011 13.4994 13.6789 13.4343 13.2429C13.3691 12.8068 13.6162 12.3842 14.028 12.2269C14.4399 12.0697 14.9058 12.2202 15.1478 12.5887C15.3899 12.9572 15.3429 13.4445 15.035 13.76C14.856 13.9554 14.6059 14.0707 14.341 14.08H14.306H14.307ZM9.67 14C9.11772 14 8.67 13.5523 8.67 13C8.67 12.4477 9.11772 12 9.67 12C10.2223 12 10.67 12.4477 10.67 13C10.67 13.5523 10.2223 14 9.67 14Z">
                                         </path>
                                     </svg>
                                 </a>
 
-                                <a href="#"
+                                <a href="https://www.facebook.com/elgadelmoshreqnursery?mibextid=ZbWKwL"
                                    class="mx-2 text-gray-600 transition-colors duration-300 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400"
                                    aria-label="Facebook">
                                     <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -507,15 +553,16 @@
                                     </svg>
                                 </a>
 
-                                <a href="#"
-                                   class="mx-2 text-gray-600 transition-colors duration-300 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400"
-                                   aria-label="Github">
-                                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M12.026 2C7.13295 1.99937 2.96183 5.54799 2.17842 10.3779C1.395 15.2079 4.23061 19.893 8.87302 21.439C9.37302 21.529 9.55202 21.222 9.55202 20.958C9.55202 20.721 9.54402 20.093 9.54102 19.258C6.76602 19.858 6.18002 17.92 6.18002 17.92C5.99733 17.317 5.60459 16.7993 5.07302 16.461C4.17302 15.842 5.14202 15.856 5.14202 15.856C5.78269 15.9438 6.34657 16.3235 6.66902 16.884C6.94195 17.3803 7.40177 17.747 7.94632 17.9026C8.49087 18.0583 9.07503 17.99 9.56902 17.713C9.61544 17.207 9.84055 16.7341 10.204 16.379C7.99002 16.128 5.66202 15.272 5.66202 11.449C5.64973 10.4602 6.01691 9.5043 6.68802 8.778C6.38437 7.91731 6.42013 6.97325 6.78802 6.138C6.78802 6.138 7.62502 5.869 9.53002 7.159C11.1639 6.71101 12.8882 6.71101 14.522 7.159C16.428 5.868 17.264 6.138 17.264 6.138C17.6336 6.97286 17.6694 7.91757 17.364 8.778C18.0376 9.50423 18.4045 10.4626 18.388 11.453C18.388 15.286 16.058 16.128 13.836 16.375C14.3153 16.8651 14.5612 17.5373 14.511 18.221C14.511 19.555 14.499 20.631 14.499 20.958C14.499 21.225 14.677 21.535 15.186 21.437C19.8265 19.8884 22.6591 15.203 21.874 10.3743C21.089 5.54565 16.9181 1.99888 12.026 2Z">
-                                        </path>
-                                    </svg>
-                                </a>
+                                <a href="https://www.youtube.com/watch?v=V6bibFpkzdI" class="mx-2 text-gray-600 transition-colors duration-300 dark:text-gray-300 hover:text-red-500 dark:hover:text-red-400" aria-label="YouTube">
+                             <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                 <path d="M21.009 7.962c-.202-1.444-.819-2.383-1.739-3.303C17.306 3.026 15.446 2.381 12 2.381s-5.306.644-6.27 2.278c-.92.92-1.537 1.859-1.739 3.303C3.647 9.016 3.647 12 3.647 12s0 2.984.344 4.038c.202 1.444.819 2.383 1.739 3.303C6.694 20.974 8.554 21.619 12 21.619s5.306-.644 6.27-2.278c.92-.92 1.537-1.859 1.739-3.303.344-1.053.344-4.038.344-4.038s0-2.984-.344-4.038zM9.8 16.49V7.554l6.972 4.467-6.972 4.469z"/>
+                                </svg>
+                                 </a>
+
+
+
+
+
                             </div>
                         </div>
                     </div>
@@ -523,30 +570,28 @@
                     <div class="mt-6 lg:mt-0 lg:flex-1">
                         <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                             <div>
-                                <h3 class="text-gray-700 uppercase dark:text-white">About</h3>
-                                <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Company</a>
-                                <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">community</a>
-                                <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Careers</a>
+                            <h3 class="text-white mb-4">Quick Links</h3>
+                        <a class="btn btn-link text-white-50" href="">{{__('About Us')}}</a><br>
+                        <a class="btn btn-link text-white-50" href="">{{__('Contact Us')}}</a><br>
+                        <a class="btn btn-link text-white-50" href="">{{__('Our Services')}}</a><br>
+                        <a class="btn btn-link text-white-50" href="">{{__('Privacy Policy')}}</a><br>
+                        <a class="btn btn-link text-white-50" href="">{{__('Terms & Condition')}}</a>
                             </div>
 
-                            <div>
-                                <h3 class="text-gray-700 uppercase dark:text-white">Blog</h3>
-                                <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Tec</a>
-                                <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Music</a>
-                                <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Videos</a>
-                            </div>
-
-                            <div>
+                           
+                            <div><br>
                                 <h3 class="text-gray-700 uppercase dark:text-white">Products</h3>
-                                <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Mega cloud</a>
-                                <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Aperion UI</a>
-                                <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Meraki UI</a>
+                                <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Childcare</a>
+                                <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Healthy Nutrition</a>
+                                <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Creative activities</a>
+                                <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Motor skills</a>
+
                             </div>
 
-                            <div>
+                            <div><br>
                                 <h3 class="text-gray-700 uppercase dark:text-white">Contact</h3>
-                                <span class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">+1 526 654 8965</span>
-                                <span class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">example@email.com</span>
+                                <span class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">(00972) 592 070 188</span>
+                                <span class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">elgadnursery@gmail.com</span>
                             </div>
                         </div>
                     </div>
@@ -555,7 +600,7 @@
                 <hr class="h-px my-6 bg-gray-200 border-none dark:bg-gray-700">
 
                 <div>
-                    <p class="text-center text-gray-500 dark:text-gray-400">© Brand 2020 - All rights reserved</p>
+                    <p class="text-center text-gray-500 dark:text-gray-400">© Brand 2023 - All rights reserved</p>
                 </div>
             </div>
         </footer>
