@@ -35,7 +35,7 @@
                             <div>
                                 <x-application-logo class="block h-9 w-auto text-gray-800 dark:text-gray-200"/>
                             </div>
-                            <div class="flex items-center text-gray-800 dark:text-gray-200 rtl:mr-2 ltr:ml-2">
+                            <div class="flex items-center text-yellow-300 dark:text-gray-200 rtl:mr-2 ltr:ml-2">
                                 {{__('Al-Ghad Al-Mashreq Nursery')}}
                             </div>
                         </div>
@@ -158,10 +158,10 @@
                 <div class="w-full lg:w-1/2">
                     <div class="lg:max-w-lg">
                         <h1 class="text-3xl font-semibold tracking-wide text-gray-800 dark:text-white lg:text-4xl">
-                        Welcome to the Al-Ghad Al-Mashreq Nursery website</h1>
-                        <p class="mt-4 text-gray-600 dark:text-gray-300">A social educational learning environment that combines originality and modernity.</p>
+                        {{__('Welcome to the Al-Ghad Al-Mashreq Nursery website')}}</h1>
+                        <p class="mt-4 text-gray-600 dark:text-gray-300">{{__('A social educational learning environment that combines originality and modernity.')}}</p>
 
-                        <p class="mt-4 text-gray-600 dark:text-gray-300">A purposeful social educational institution that seeks to provide meaningful educational and care services for children from the age of 45 days to three years.</p>
+                        <p class="mt-4 text-gray-600 dark:text-gray-300">{{__('A purposeful social educational institution that seeks to provide meaningful educational and care services for children from the age of 45 days to three years.')}}</p>
 
                         
 
@@ -186,7 +186,7 @@
                         class="flex flex-col w-full max-w-sm p-8 space-y-8 text-center bg-white border-2 border-gray-200 rounded-lg lg:mx-4 dark:bg-gray-900 dark:border-gray-700">
                         <div class="flex-shrink-0">
                             <h2 class="inline-flex items-center justify-center px-2 font-semibold tracking-tight text-blue-400 uppercase rounded-lg bg-gray-50 dark:bg-gray-700">
-                            Hourly child fee system
+                            {{__('Hourly child fee system')}}
                             </h2>
                         </div>
 
@@ -198,29 +198,29 @@
 
                         <ul class="flex-1 space-y-4">
                         <li class="text-gray-500 dark:text-gray-400">
-                            hour of the nursery :
+                        {{__('Late fees after the third hour :')}}
                             </li>
                             <li class="text-gray-500 dark:text-gray-400">
                             5 ₪
                             </li>
                             <li class="text-gray-500 dark:text-gray-400">
                                  
-                                From the age of 45 days 
+                            {{__('From the age of 45 days')}} 
                             </li>
 
                             <li class="text-gray-500 dark:text-gray-400">
-                            to the age of three years
+                            {{__('to the age of three years')}}
                             </li>
 
                             <li class="text-gray-500 dark:text-gray-400">
-                            The delay after the third 
+                            {{__('.......')}} 
                             </li>
                            
                         </ul>
 
                         <button
                             class="inline-flex items-center justify-center px-4 py-2 font-medium text-white uppercase transition-colors bg-blue-500 rounded-lg hover:bg-blue-700 focus:outline-none">
-                            Start free
+                            {{__('Start free')}}
                         </button>
                     </div>
 
@@ -228,7 +228,7 @@
                         class="flex flex-col w-full max-w-sm p-8 space-y-8 text-center bg-white border-2 border-gray-200 rounded-lg lg:mx-4 dark:bg-gray-900 dark:border-gray-700">
                         <div class="flex-shrink-0">
                             <h2 class="inline-flex items-center justify-center px-2 font-semibold tracking-tight text-blue-400 uppercase rounded-lg bg-gray-50 dark:bg-gray-700">
-                            Child fee system per day
+                            {{__('Child fee system per day')}}
                             </h2>
                         </div>
 
@@ -238,27 +238,27 @@
                 </span>
 
                             <span class="text-gray-500 dark:text-gray-400">
-                    /day
+                            /{{__('day')}}
                 </span>
                         </div>
 
                         <ul class="flex-1 space-y-4">
                             <li class="text-gray-500 dark:text-gray-400">
-                            System 4 days a week for a month  : 
+                            {{__('System 4 days a week for a month  :')}} 
                             </li>
                             <li class="text-gray-500 dark:text-gray-400">
                             100 ₪
                             </li>
 
                             <li class="text-gray-500 dark:text-gray-400">
-                            System 3 days a week for a month :
+                            {{__('System 3 days a week for a month :')}}
                             </li>
                             <li class="text-gray-500 dark:text-gray-400">
                             80 ₪
                             </li>
 
                             <li class="text-gray-500 dark:text-gray-400">
-                            System 2 days a week for a month : 
+                            {{__('System 2 days a week for a month :')}} 
                             </li>
                             <li class="text-gray-500 dark:text-gray-400">
                             50 ₪
@@ -269,7 +269,7 @@
 
                         <button
                             class="inline-flex items-center justify-center px-4 py-2 font-medium text-white uppercase transition-colors bg-blue-500 rounded-lg hover:bg-blue-700 focus:outline-none">
-                            Start free trial
+                            {{__('Start free trial')}}
                         </button>
                     </div>
 
@@ -277,7 +277,7 @@
                         class="flex flex-col w-full max-w-sm p-8 space-y-8 text-center bg-white border-2 border-gray-200 rounded-lg lg:mx-4 dark:bg-gray-900 dark:border-gray-700">
                         <div class="flex-shrink-0">
                             <h2 class="inline-flex items-center justify-center px-2 font-semibold tracking-tight text-blue-400 uppercase rounded-lg bg-gray-50 dark:bg-gray-700">
-                            Child fee system per month
+                            {{__('Child fee system per month')}}
                             </h2>
                         </div>
 
@@ -287,13 +287,13 @@
                 </span>
 
                             <span class="text-gray-500 dark:text-gray-400">
-                    /month
+                            /{{__('month')}}
                 </span>
                         </div>
 
                         <ul class="flex-1 space-y-4">
                             <li class="text-gray-500 dark:text-gray-400">
-                            Monthly system for one child :
+                            {{__('Monthly system for one child :')}}
                             </li>
 
                             <li class="text-gray-500 dark:text-gray-400">
@@ -301,14 +301,14 @@
                             </li>
 
                             <li class="text-gray-500 dark:text-gray-400">
-                            Monthly system for brothers number 2 :
+                            {{__('Monthly system for brothers number 2 :')}}
                             </li>
 
                             <li class="text-gray-500 dark:text-gray-400">
                             225 ₪                            </li>
 
                             <li class="text-gray-500 dark:text-gray-400">
-                            Monthly system for brothers number 3 :
+                            {{__('Monthly system for brothers number 3 :')}}
                             </li>
 
                             <li class="text-gray-500 dark:text-gray-400">
@@ -317,7 +317,7 @@
 
                         <button
                             class="inline-flex items-center justify-center px-4 py-2 font-medium text-white uppercase transition-colors bg-blue-500 rounded-lg hover:bg-blue-700 focus:outline-none">
-                            Start free trial
+                            {{__('Start free trial')}}
                         </button>
                     </div>
                 </div>
@@ -326,7 +326,7 @@
         <section id="feedback" class="bg-white dark:bg-gray-900 scroll-my-28">
             <div class="container px-6 py-10 mx-auto">
                 <h1 class="text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl dark:text-white">
-                    What our <span class="text-blue-500 ">clients</span> say
+                {{__('What our')}} <span class="text-blue-500 ">{{__('clients')}}</span> {{__('say')}}
                 </h1>
 
                 <p class="max-w-2xl mx-auto mt-6 text-center text-gray-500 dark:text-gray-300">
@@ -336,9 +336,7 @@
                 <section class="grid grid-cols-1 gap-8 mt-8 xl:mt-12 lg:grid-cols-2 xl:grid-cols-3">
                     <div class="p-8 border rounded-lg dark:border-gray-700">
                         <p class="leading-loose text-gray-500 dark:text-gray-400">
-                            “{{__('Great experience! Al-Ghad Al-Mashreq Nursery was a safe and nurturing place for my child. 
-                            The staff was friendly and professional, 
-                            and took care of the individual needs of the child.')}}”
+                            “{{__('Great experience! Al-Ghad Al-Mashreq Nursery was a safe and nurturing place for my child.The staff was friendly and professional,and took care of the individual needs of the child.')}}”
                         </p>
 
                         <div class="flex items-center mt-8 -mx-2">
@@ -348,16 +346,15 @@
                                 alt="">
 
                             <div class="mx-2">
-                                <h1 class="font-semibold text-gray-800 dark:text-white">Deema</h1>
-                                <span class="text-sm text-gray-500">Gaza,</span>
+                                <h1 class="font-semibold text-gray-800 dark:text-white">{{__('Salwa')}}</h1>
+                                <span class="text-sm text-gray-500">{{__('Gaza,')}}</span>
                             </div>
                         </div>
                     </div>
 
                     <div class="p-8 border rounded-lg dark:border-gray-700">
                         <p class="leading-loose text-gray-500 dark:text-gray-400">
-                            “{{__('I am very happy with the service of Al Ghad Al Mashreq Nursery. Their professional treatment and individual attention to my 
-                                child made me feel comfortable and confident. I highly recommend them!')}}”.
+                            “{{__('I am very happy with the service of Al Ghad Al Mashreq Nursery. Their professional treatment and individual attention to my child made me feel comfortable and confident. I highly recommend them!')}}”.
                         </p>
 
                         <div class="flex items-center mt-8 -mx-2">
@@ -367,16 +364,15 @@
                                 alt="">
 
                             <div class="mx-2">
-                                <h1 class="font-semibold text-gray-800 dark:text-white"> Noor </h1>
-                                <span class="text-sm text-gray-500">Gaza, </span>
+                                <h1 class="font-semibold text-gray-800 dark:text-white"> {{__('Noor')}} </h1>
+                                <span class="text-sm text-gray-500">{{__('Gaza,')}} </span>
                             </div>
                         </div>
                     </div>
 
                     <div class="p-8 border rounded-lg dark:border-gray-700">
                         <p class="leading-loose text-gray-500 dark:text-gray-400">
-                            “{{__('Al Ghad Al Mashreq Nursery is the best choice for my child. Take advantage of their educational programs
-                                 and fun activities. They gave him the care and love he deserves.')}}”.
+                            “{{__('Al Ghad Al Mashreq Nursery is the best choice for my child. Take advantage of their educational programs and fun activities. They gave him the care and love he deserves.')}}”.
                         </p>
 
                         <div class="flex items-center mt-8 -mx-2">
@@ -386,8 +382,8 @@
                                 alt="">
 
                             <div class="mx-2">
-                                <h1 class="font-semibold text-gray-800 dark:text-white"> Ali </h1>
-                                <span class="text-sm text-gray-500">Gaza, </span>
+                                <h1 class="font-semibold text-gray-800 dark:text-white"> {{__('Deema')}} </h1>
+                                <span class="text-sm text-gray-500">{{__('Gaza,')}} </span>
                             </div>
                         </div>
                     </div>
@@ -405,9 +401,9 @@
                         </svg>
                     </span>
 
-                            <h2 class="mt-4 text-base font-medium text-gray-800 dark:text-white">Email</h2>
-                            <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Our friendly team is here to help.</p>
-                            <p class="mt-2 text-sm text-blue-500 dark:text-blue-400">elgadnursery@gmail.com</p>
+                            <h2 class="mt-4 text-base font-medium text-gray-800 dark:text-white">{{__('Email')}}</h2>
+                            <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">{{__('Our friendly team is here to help.')}}</p>
+                            <p class="mt-2 text-sm text-blue-500 dark:text-blue-400">{{__('elgadnursery@gmail.com')}}</p>
                         </div>
 
                         <div>
@@ -418,9 +414,9 @@
                         </svg>
                     </span>
 
-                            <h2 class="mt-4 text-base font-medium text-gray-800 dark:text-white">Office</h2>
-                            <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Come say hello at our office HQ.</p>
-                            <p class="mt-2 text-sm text-blue-500 dark:text-blue-400">Palestine, Gaza, Islamic University</p>
+                            <h2 class="mt-4 text-base font-medium text-gray-800 dark:text-white">{{__('Office')}}</h2>
+                            <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">{{__('Come say hello at our office HQ.')}}</p>
+                            <p class="mt-2 text-sm text-blue-500 dark:text-blue-400">{{__('Palestine, Gaza, Islamic University')}}</p>
                         </div>
 
                         <div>
@@ -430,9 +426,9 @@
                         </svg>
                     </span>
 
-                            <h2 class="mt-4 text-base font-medium text-gray-800 dark:text-white">Phone</h2>
-                            <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">From Saturday to Wednesday from 8 am to 5 pm.</p>
-                            <p class="mt-2 text-sm text-blue-500 dark:text-blue-400">(00972) 592 070 188</p>
+                            <h2 class="mt-4 text-base font-medium text-gray-800 dark:text-white">{{__('Phone')}}</h2>
+                            <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">{{__('From Saturday to Wednesday from 7:300 am to 3 pm.')}}</p>
+                            <p class="mt-2 text-sm text-blue-500 dark:text-blue-400">{{__('(00972) 592 070 188')}}</p>
                         </div>
                     </div>
 
@@ -529,7 +525,7 @@
 
 
 <br>
-                            <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>{{__('Palestine ,Gaza, islamic university, Medina building ')}}</p>
+                     <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>{{__('Palestine ,Gaza, islamic university, Medina building ')}}</p>
                         <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>{{__('0592 070 188')}}</p>
                         <p class="mb-2"><i class="fa fa-envelope me-3"></i>{{__('elgadnursery@gmail.com')}}</p>
 
@@ -580,18 +576,18 @@
 
                            
                             <div><br>
-                                <h3 class="text-gray-700 uppercase dark:text-white">Products</h3>
-                                <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Childcare</a>
-                                <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Healthy Nutrition</a>
-                                <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Creative activities</a>
-                                <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Motor skills</a>
+                                <h3 class="text-gray-700 uppercase dark:text-white">{{__('Products')}}</h3>
+                                <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">{{__('Childcare')}}</a>
+                                <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">{{__('Healthy Nutrition')}}</a>
+                                <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">{{__('Creative activities')}}</a>
+                                <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">{{__('Motor skills')}}</a>
 
                             </div>
 
                             <div><br>
-                                <h3 class="text-gray-700 uppercase dark:text-white">Contact</h3>
-                                <span class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">(00972) 592 070 188</span>
-                                <span class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">elgadnursery@gmail.com</span>
+                                <h3 class="text-gray-700 uppercase dark:text-white">{{__('Contact')}}</h3>
+                                <span class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">{{__('(00972) 592 070 188')}}</span>
+                                <span class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">{{__('elgadnursery@gmail.com')}}</span>
                             </div>
                         </div>
                     </div>
@@ -600,7 +596,7 @@
                 <hr class="h-px my-6 bg-gray-200 border-none dark:bg-gray-700">
 
                 <div>
-                    <p class="text-center text-gray-500 dark:text-gray-400">© Brand 2023 - All rights reserved</p>
+                    <p class="text-center text-gray-500 dark:text-gray-400">{{__('© Brand 2023 - All rights reserved')}}</p>
                 </div>
             </div>
         </footer>
